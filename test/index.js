@@ -8,7 +8,12 @@ describe('squareArray', () => {
         expect(function() {square.read();}).to.throw("Square array is empty.");
     });
 
-    
+    it('should write elements to the square', ()=>{
+        let square = squareArray(2);
+        square.write('1');
+        expect(square.read()).to.equal('1');
+    });
+
 
 })
 

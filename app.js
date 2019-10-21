@@ -24,8 +24,12 @@ class SquareArray {
 	}
 
 	forceWrite(str) {
-		this.array.pop();
-		this.array.push(str);
+		if (this.array.length < this.capacity) {
+			this.write(str);
+		} else {
+			this.array.pop();
+			this.array.push(str);
+		}
 	}
 
 }

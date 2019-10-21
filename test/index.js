@@ -42,6 +42,19 @@ describe('squareArray', () => {
         expect(square.read()).to.equal('4');
     });
 
+    it('if capacity not yet reached, forceWrite should do a regular write to next spot', ()=>{
+        let square = squareArray(4);
+        square.write('1');
+        square.write('2');
+        expect(square.read()).to.equal('1');
+        square.write('3');
+        square.forceWrite('4');
+        expect(square.read()).to.equal('2');
+        expect(square.read()).to.equal('3');
+        expect(square.read()).to.equal('4');
+        expect(function() {square.read();}).to.throw("Square array is empty.");
+    });
+
 
 
 })

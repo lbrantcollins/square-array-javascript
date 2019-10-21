@@ -7,12 +7,9 @@ class SquareArray {
 
 	read() {
 		if (this.array.length > 0) {
-			// when reading, want to return the oldest item (FIFO)
-			const oldestItem = this.array[0];
-			// then remove the oldest item
+			// when reading, want to return the oldest item (FIFO) and remove it
 			// shift the array so that the next oldest item is in the first spot
-			this.array.shift();
-			return oldestItem;
+			return this.array.shift();
 		} else {
 			throw "Square array is empty."
 		}

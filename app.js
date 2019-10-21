@@ -7,14 +7,20 @@ class SquareArray {
 
 	read() {
 		if (this.array.length > 0) {
-			return this.array[0];
+			const oldestItem = this.array[0];
+			this.array.shift();
+			return oldestItem;
 		} else {
 			throw "Square array is empty."
 		}
 	}
 
 	write(str) {
-		this.array.push(str);
+		if (this.array.length < this.capacity) {
+			this.array.push(str);
+		} else {
+			throw "Square array is full."
+		}
 	}
 
 }

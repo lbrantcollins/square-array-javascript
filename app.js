@@ -7,7 +7,10 @@ class SquareArray {
 
 	read() {
 		if (this.array.length > 0) {
+			// when reading, want to return the oldest item (FIFO)
 			const oldestItem = this.array[0];
+			// then remove the oldest item
+			// shift the array so that the next oldest item is in the first spot
 			this.array.shift();
 			return oldestItem;
 		} else {
@@ -16,6 +19,7 @@ class SquareArray {
 	}
 
 	write(str) {
+		// only write to the array if the capacity has not yet been reached
 		if (this.array.length < this.capacity) {
 			this.array.push(str);
 		} else {
@@ -24,6 +28,8 @@ class SquareArray {
 	}
 
 	forceWrite(str) {
+		// can forcewrite onto a full array (overwrite the most recent entry)
+		// but, if capacity not yet reached, just write to the next spot, as usual
 		if (this.array.length < this.capacity) {
 			this.write(str);
 		} else {

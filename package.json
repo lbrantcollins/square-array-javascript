@@ -1,0 +1,19 @@
+{
+  "name": "square-array-javascript",
+  "version": "1.0.0",
+  "description": "square array",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github-lbrantcollins:lbrantcollins/square-array-javascript.git"
+  },
+  "author": "Linda (Brant) Collins",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
+  }
+}

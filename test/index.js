@@ -31,6 +31,17 @@ describe('squareArray', () => {
         expect(function() {square.write('4');}).to.throw("Square array is full.");
     });
 
+    it('can forcewrite onto a full array (overwrite the most recent entry)', ()=>{
+        let square = squareArray(2);
+        square.write('1');
+        square.write('2');
+        expect(square.read()).to.equal('1');
+        square.write('3');
+        square.forceWrite('4');
+        expect(square.read()).to.equal('2');
+        expect(square.read()).to.equal('4');
+    });
+
 
 
 })

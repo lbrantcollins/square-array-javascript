@@ -23,6 +23,11 @@ class SquareArray {
 		}
 	}
 
+	forceWrite(str) {
+		this.array.pop();
+		this.array.push(str);
+	}
+
 }
 
 function squareArray(capacity) {
